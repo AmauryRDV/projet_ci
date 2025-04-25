@@ -96,3 +96,17 @@ Mise en place d’un processus complet d’automatisation de publication de vers
 
 ---
 
+##Retour sur le script final
+Le script release.sh centralise les étapes de publication et permet de choisir l'outil utilisé pour le processus. Intégré dans le pipeline CI via GitHub Actions, il automatise l'ensemble du cycle de publication.
+
+Points forts :
+Flexibilité : Il permet de choisir l'outil de publication (release-it, semantic-release, standard-version).
+Sécurité : Avant de procéder à la publication, une vérification des tests est effectuée. Si des tests échouent, la publication est bloquée.
+Automatisation : La création automatique des tags et des changelogs simplifie grandement le processus.
+
+Points à améliorer :
+Gestion des erreurs : Le script pourrait être amélioré pour mieux gérer les erreurs, notamment en cas d'échec ou de mauvaise configuration des outils.
+Extensions : Le script peut être étendu pour intégrer de nouveaux outils de versionnement ou de publication si nécessaire.
+
+Dans l'ensemble, le script est efficace et permet de gagner du temps dans la gestion des versions et des releases. Cependant, il peut être amélioré pour renforcer sa robustesse et sa flexibilité.
+
