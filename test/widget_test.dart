@@ -27,4 +27,8 @@ void main() {
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
   });
+  testWidgets('Test cassé pour vérification du blocage', (WidgetTester tester) async {
+    expect(1 + 1, equals(3)); // Faux exprès
+  });
+
 }
