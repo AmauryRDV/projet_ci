@@ -1,9 +1,5 @@
 # RELEASE_REPORT
 
-## Auteur
-
-Amaury
-
 ## Projet
 
 Projet Flutter : `project_ci`
