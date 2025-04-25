@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 Lancement des tests Flutter..."
+echo "Lancement des tests Flutter"
 flutter test
 
 if [ $? -ne 0 ]; then
@@ -35,4 +35,4 @@ case $TOOL in
     ;;
 esac
 
-echo "✅ Release effectuée avec succès !"
+echo "Release effectuée avec succès !"

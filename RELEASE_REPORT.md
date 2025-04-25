@@ -19,15 +19,48 @@ Mise en place d’un processus complet d’automatisation de publication de vers
 - Utilisé pour gérer l'incrémentation de version, la génération du changelog, la création de tag Git, et la publication de release GitHub.
 - Configuration via un fichier `.release-it.json`.
 
+#### Forces :
+
+- Outil tout-en-un pour gérer les versions, changelog, tags, et releases.
+- Prise en charge d’une large variété de plateformes (GitHub, GitLab, etc.).
+- Configuration flexible via un fichier JSON.
+
+#### Faiblesses : 
+
+- Peut nécessiter une bonne configuration initiale, surtout pour l'intégration avec des outils tiers comme GitHub.
+- Parfois un peu trop automatisé, ce qui peut rendre difficile la personnalisation du flux de travail selon des besoins spécifiques.
+- 
 ### GitHub CLI (gh)
 
 - Utilisé pour l’authentification avec GitHub et la gestion du token dans les scripts.
 - Intégré dans le script `release.sh`.
 
+#### Forces :
+
+- Utilisation native avec GitHub, très pratique pour la gestion de tokens et de releases directement depuis la ligne de commande.
+- Prise en charge de nombreuses opérations GitHub sans passer par l'interface web.
+- Simple à configurer, surtout pour l’authentification et la gestion des releases.
+
+#### Faiblesses :
+
+- Nécessite une bonne configuration au début, surtout pour l’authentification.
+- Moins de flexibilité dans la gestion de projets multiples (si tu as plusieurs projets GitHub ou des configurations complexes).
+
 ### Script `release.sh`
 
 - Script centralisant les étapes de publication : tests, versioning, changelog, tag, push, release.
 - Exécutable en local ou dans un pipeline CI.
+
+#### Forces : 
+
+- Permet une grande personnalisation en intégrant plusieurs outils (comme release-it, semantic-release, etc.).
+- Facile à comprendre et à étendre avec de nouveaux outils ou étapes.
+- Permet de centraliser tout le processus de publication dans un seul fichier exécutable.
+
+#### Faiblesses :
+
+- Peut devenir complexe si tu veux gérer plusieurs outils ou configurations différentes.
+- Le script peut devenir difficile à maintenir si des étapes sont ajoutées fréquemment ou si le processus change souvent.
 
 ---
 
@@ -56,19 +89,14 @@ Mise en place d’un processus complet d’automatisation de publication de vers
 - Workflow CI : `.github/workflows/release.yml`
 - Changelog : `CHANGELOG.md`
 - Release publique visible sur GitHub avec changelog intégré
-- Tag Git `vX.Y.Z` visible sur le dépôt distant
+- Tag Git visible sur le dépôt distant
 - Ce rapport : `RELEASE_REPORT.md`
 
 ---
 
 ## Lien vers la release
 
-https://github.com/ton-utilisateur/project_ci/releases
+https://github.com/AmauryRDV/project_ci/releases
 
 ---
 
-## Remarques
-
-Le processus de publication a été testé et validé à travers différents scénarios.  
-Tous les tests doivent réussir avant de déclencher la release.  
-Le pipeline est stable et opérationnel sur GitHub Actions.
