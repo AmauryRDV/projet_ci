@@ -96,7 +96,7 @@ Mise en place d’un processus complet d’automatisation de publication de vers
 
 ## Lien vers la release
 
-https://github.com/AmauryRDV/project_ci/releases
+[https://github.com/AmauryRDV/project_ci/releases](https://github.com/AmauryRDV/projet_ci/releases)
 
 ---
 
